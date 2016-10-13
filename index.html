@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="./styles/main.css">
+
+		<!-- jquery -->
+		<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//cdn.bootcss.com/vue/2.0.2/vue.js"></script>
+		<script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js"></script>
+		<script src="./scripts/config.js"></script>
+		
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    	<!--[if lt IE 9]>
+      		<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      		<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+	</head>
+	<body>
+		<h1 class="text-center">石大易送水</h1>
+		
+		<form action="" id="sub-form">
+				<label>楼号</label>
+				<select class="form-control" id="block-select">
+					  <option value="1">1号楼</option>
+					  <option value="2">2号楼</option>
+					  <option value="3">3号楼</option>
+					  <option value="4">4号楼</option>
+					  <option value="5">5号楼</option>
+					  <option value="6">6号楼</option>
+					  <option value="7">7号楼</option>
+					  <option value="8">8号楼</option>
+					  <option value="9">9号楼</option>
+					  <option value="10">10号楼</option>
+					  <option value="11">11号楼</option>
+					  <option value="12">12号楼</option>
+					  <option value="13">13号楼</option>
+					  <option value="14">14号楼</option>
+					  <option value="15">15号楼</option>
+					  <option value="16">16号楼</option>
+					  <option value="17">17号楼</option>
+					  <option value="18">18号楼</option>
+					  <option value="19">19号楼</option>
+				</select>
+
+			<div class="form-group">
+				<label>宿舍号</label>
+				<input type="text" class="form-control" name="dormitory" id="dormitory" placeholder="请输入宿舍号，纯数字">
+			</div>
+			<div class="form-group">
+				<label>姓名</label>
+				<input type="text" class="form-control" name="name" id="name" placeholder="姓名">
+			</div>
+			<div class="form-group">
+				<label>手机</label>
+				<input type="text" class="form-control" name="phone" id="phone" placeholder="电话">
+			</div>
+
+			<div class="form-group">
+				<label class="sr-only"></label>
+				<button v-on:click="sub" type="button" class="form-control btn btn-success">提交</button>
+			</div>
+			
+		</form>
+
+
+
+		<script src="./scripts/main.js"></script>
+
+	
+		<!-- Bootstrap JavaScript -->
+		<script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
