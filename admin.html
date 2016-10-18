@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>Title Page</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title Page</title>
 
-		<!-- Bootstrap CSS -->
-		<link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- jquery -->
-		<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-		<script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.min.js"></script>
-		<script src="./scripts/config.js"></script>
+    <!-- jquery -->
+    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/vue/2.0.2/vue.js"></script>
+    <script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.min.js"></script>
+    <script src="./scripts/config.js"></script>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    	<!--[if lt IE 9]>
-      		<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      		<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    	<![endif]-->
-	</head>
-	<body>
-
-		
-		<!-- Bootstrap JavaScript -->
-		<script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	</body>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<ul id="filelist">
+  <li v-for="list in lists">
+  <form v-bind:action="'http://localhost:8086/deliverwater/download'" method="get">
+        <input class="sr-only" type="text" v-bind:value="list" name="filename"> 
+        <button>{{list}}</button>
+    </form>
+</ul>
+<script src="./scripts/admin.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
 </html>

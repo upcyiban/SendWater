@@ -24,9 +24,8 @@
       		<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     	<![endif]-->
 	</head>
-	<body>
+	<body onload="login()">
 		<h1 class="text-center">石大易送水</h1>
-		
 		<form action="" id="sub-form">
 				<label>楼号</label>
 				<select class="form-control" id="block-select">
@@ -65,10 +64,13 @@
 			</div>
 
 			<div class="form-group">
+        		<label>桶数</label>
+        		<input type="text" class="form-control" name="num" id="num" placeholder="输入桶数，纯数字">
+      		</div>
+			<div class="form-group">
 				<label class="sr-only"></label>
 				<button v-on:click="sub" type="button" class="form-control btn btn-success">提交</button>
 			</div>
-			
 		</form>
 
 
