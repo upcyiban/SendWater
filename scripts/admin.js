@@ -18,7 +18,8 @@ function checkAdmin() {
 var filelist = new Vue({
     el: '#filelist',
     data: {
-        lists: []     
+        lists: [],
+        appurl: config.appurl
     }
 })
 checkAdmin();

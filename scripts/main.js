@@ -63,7 +63,7 @@ var sub = new Vue({
                 phone: $('#phone').val(),
                 num: $('#num').val()
             }
-            this.$http.get('http://localhost:8086/deliverwater', {params: params}).then((response)=> {
+            this.$http.get(config.appurl, {params: params}).then((response)=> {
                 console.log(response.data)
                 if (response.data.code == 1) {
                     alert("提交成功");
