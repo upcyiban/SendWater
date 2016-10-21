@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="" xmlns:v-on="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,13 +65,45 @@
 
 			<div class="form-group">
         		<label>桶数</label>
-        		<input type="text" class="form-control" name="num" id="num" placeholder="输入桶数，纯数字">
+        		<input type="text" class="form-control" name="num" id="num" placeholder="输入桶数，纯数字" value="1">
       		</div>
+
+			<div class="form-group">
+				<label>水票数</label>
+				<input type="text" class="form-control" name="ticket" id="ticket" placeholder="输入想要订购的水票数，纯数字，默认为0" value="0">
+			</div>
 			<div class="form-group">
 				<label class="sr-only"></label>
 				<button v-on:click="sub" type="button" class="form-control btn btn-success">提交</button>
 			</div>
 		</form>
+
+		<div class="shuoming">
+			<h4 class="text-center">说明</h4>
+			<div class="text-cneter">
+				1.订水票优惠: 订十张送三张<br>
+				2.晚上八点以前订水当天派送，逾期次日派送。<br>
+				3.由石大利群水站确保水的质量。<br>
+				4.石大利群水站电话: 15954881716(吕先生)。<br>
+				5.该应用的最总解释权归中国石油大学(华东)易班发展中心所有。
+			</div>
+		</div>
+
+
+		<div class="footer" align="center">
+			<footer class="footer">
+				<p align="center">&copy; upcyiban</p>
+				<p>powered by 易班技术部</p>
+				<div style="display: none;">
+					<script
+							type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cspan id='cnzz_stat_icon_1259236200'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1259236200' type='text/javascript'%3E%3C/script%3E"));</script>
+				</div>
+			</footer>
+		</div>
+
+
+
 
 
 

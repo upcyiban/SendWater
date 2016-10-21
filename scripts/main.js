@@ -46,11 +46,20 @@ var sub = new Vue({
             } else if ($('#phone').val() == '') {
                 alert('请输入电话');
                 return false;
+            }else if ($('#num').val() == '') {
+                alert('请输入桶数');
+                return false;
+            } else if ($('#tiket').val() == '') {
+                alert('请输入桶数');
+                return false;
             } else if (isNaN($('#dormitory').val()) == true) {
                 alert('宿舍号不符合规范');
                 return false;
             } else if (isNaN($('#num').val()) == true) {
                 alert('桶数不符合规范');
+                return false;
+            } else if (isNaN($('#ticket').val()) == true) {
+                alert('水漂数不符合规范');
                 return false;
             } else if (isNaN($('#phone').val()) == true || checknumber($('#phone').val()) == false) {
                 alert('手机号不符合规范');
@@ -61,8 +70,9 @@ var sub = new Vue({
                 dormitory: $('#dormitory').val(),
                 name: $('#name').val(),
                 phone: $('#phone').val(),
-                num: $('#num').val()
-            }
+                num: $('#num').val(),
+                ticket: $('#ticket')
+            };
             this.$http.get(config.appurl, {params: params}).then((response)=> {
                 console.log(response.data)
                 if (response.data.code == 1) {
@@ -71,6 +81,7 @@ var sub = new Vue({
                     $('#name').val('');
                     $('#phone').val('');
                     $('#num').val('');
+                    ticket: $('ticket');
                 }else {
                     alert("未知错误");
                 }
