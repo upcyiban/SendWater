@@ -25,7 +25,7 @@
 <body>
 <ul id="filelist">
   <li v-for="list in lists">
-  <form v-bind:action="'http://localhost:8086/deliverwater/download'" method="get">
+  <form v-bind:action="appurl + '/download'" method="get">
         <input class="sr-only" type="text" v-bind:value="list" name="filename"> 
         <button>{{list}}</button>
     </form>
