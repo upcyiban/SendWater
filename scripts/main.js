@@ -35,6 +35,15 @@ Vue.http.interceptors.push((request, next) => {
 })
 var sub = new Vue({
     el: '#sub-form',
+    data:{
+        name: '',
+        block: '',
+        dormitory: '',
+        phone: '',
+        num: 1,
+        ticket: 0
+
+    },
     methods: {
         sub: function () {
             if ($('#dormitory').val() == '') {
@@ -66,7 +75,7 @@ var sub = new Vue({
                 return false;
             }
             params = {
-                blockNumber: $('#block-select').val(),
+                blockNumber: $('#block').val(),
                 dormitory: $('#dormitory').val(),
                 name: $('#name').val(),
                 phone: $('#phone').val(),
@@ -76,12 +85,14 @@ var sub = new Vue({
             this.$http.get(config.appurl, {params: params}).then((response)=> {
                 console.log(response.data)
                 if (response.data.code == 1) {
-                    alert("提交成功");
                     $('#dormitory').val('');
                     $('#name').val('');
                     $('#phone').val('');
                     $('#num').val('');
-                    ticket: $('ticket');
+                     $('#ticket').val('');
+                    $('#subModal').modal('hide');
+                    $('#success').modal('show');
+
                 }else {
                     alert("未知错误");
                 }
