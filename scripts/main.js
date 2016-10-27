@@ -1,7 +1,5 @@
 function login() {
     var url = window.location.href;
-    console.log(2333)
-    console.log(url)
     if (url.indexOf("verify_request") != -1) {
         var vq = window.location.href.split('=')[1].split('&')[0];
         if (vq != '') {
@@ -49,20 +47,11 @@ var sub = new Vue({
             if ($('#dormitory').val() == '') {
                 alert('请输入宿舍号');
                 return false;
-            } else if ($('#name').val() == '') {
-                alert('请输入姓名');
-                return false;
-            } else if ($('#phone').val() == '') {
-                alert('请输入电话');
-                return false;
-            }else if ($('#num').val() == '') {
+            } else if ($('#num').val() == '') {
                 alert('请输入桶数');
                 return false;
             } else if ($('#tiket').val() == '') {
-                alert('请输入桶数');
-                return false;
-            } else if (isNaN($('#dormitory').val()) == true) {
-                alert('宿舍号不符合规范');
+                alert('请输入水票数');
                 return false;
             } else if (isNaN($('#num').val()) == true) {
                 alert('桶数不符合规范');
@@ -70,15 +59,10 @@ var sub = new Vue({
             } else if (isNaN($('#ticket').val()) == true) {
                 alert('水漂数不符合规范');
                 return false;
-            } else if (isNaN($('#phone').val()) == true || checknumber($('#phone').val()) == false) {
-                alert('手机号不符合规范');
-                return false;
             }
             params = {
                 blockNumber: $('#block').val(),
                 dormitory: $('#dormitory').val(),
-                name: $('#name').val(),
-                phone: $('#phone').val(),
                 num: $('#num').val(),
                 ticket: $('#ticket')
             };
@@ -86,8 +70,6 @@ var sub = new Vue({
                 console.log(response.data)
                 if (response.data.code == 1) {
                     $('#dormitory').val('');
-                    $('#name').val('');
-                    $('#phone').val('');
                     $('#num').val('');
                      $('#ticket').val('');
                     $('#subModal').modal('hide');
