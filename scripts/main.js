@@ -34,10 +34,8 @@ Vue.http.interceptors.push((request, next) => {
 var sub = new Vue({
     el: '#sub-form',
     data:{
-        name: '',
         block: '',
         dormitory: '',
-        phone: '',
         num: 1,
         ticket: 0
 
