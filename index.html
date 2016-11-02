@@ -78,12 +78,9 @@
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 								&times;
 							</button>
-							<h4 class="modal-title" id="myModalLabel">
-								确认提交
-							</h4>
+						
 						</div>
 						<div class="modal-body">
-							点击提交即表示您同意页面最下面的说明条例。 <br>
 							您的楼号: {{ block }}
 							<br>
 							您的宿舍: {{ dormitory }}
@@ -94,6 +91,12 @@
 							<br>
 						</div>
 						<div class="modal-footer">
+
+								  <div class="checkbox">
+									    <label>
+									      <input id="subcheck" type="checkbox" checked="checked"> 我同意<a href="./minze.html">免责声明</a>
+									    </label>
+  </div>
 							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
 							</button>
 							<button v-on:click="sub" type="button" class="btn btn-primary">

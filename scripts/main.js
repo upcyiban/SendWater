@@ -34,7 +34,7 @@ Vue.http.interceptors.push((request, next) => {
 var sub = new Vue({
     el: '#sub-form',
     data:{
-        block: '',
+        block: '1',
         dormitory: '',
         num: 1,
         ticket: 0
@@ -55,7 +55,10 @@ var sub = new Vue({
                 alert('桶数不符合规范');
                 return false;
             } else if (isNaN($('#ticket').val()) == true) {
-                alert('水漂数不符合规范');
+                alert('水票数不符合规范');
+                return false;
+            }else if($('#subcheck').prop('checked')==false){
+                alert('不同意免责声明');
                 return false;
             }
             params = {
@@ -67,9 +70,10 @@ var sub = new Vue({
             this.$http.get(config.appurl, {params: params}).then((response)=> {
                 console.log(response.data)
                 if (response.data.code == 1) {
-                    $('#dormitory').val('');
-                    $('#num').val('');
-                     $('#ticket').val('');
+                    sub.block = 1;
+                    sub.dormitory='';
+                    sub.num=1;
+                    sub.ticket=0;
                     $('#subModal').modal('hide');
                     $('#success').modal('show');
 
